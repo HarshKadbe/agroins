@@ -1,0 +1,438 @@
+.navbar {
+        background-color: #607980;
+    }
+    .navbar a {
+        color: white;
+    }
+    .navbar a:hover {
+       background-color: #6b949a;    }
+    .navbar-brand {
+        margin-right: auto; /* Logo to the left */
+    }
+    .nav-items {
+        text-align: center; /* Centered links */
+        
+    }
+    .nav-buttons {
+        margin-left: auto; /* Buttons to the right */
+    }
+
+.preview-images-zone {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.preview-image {
+  width: 150px;
+  margin-right: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: absolute;
+    position: sticky;
+    background-color: #607980;
+    overflow: hidden;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-items a {
+    float: left;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-buttons button {
+    background-color: #0033ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-buttons button:hover {
+    background-color: #3c8e41;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #E3EFE3;
+}
+
+.header-container {
+    width: 100%;
+    height: 85vh; /* 100% of the viewport height */
+    overflow: hidden;
+    position: relative;
+    background:rgb(18 18 18);
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    transition: opacity 2s ease-in-out; /* Smooth transition effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.5);
+    
+}
+
+.hidden {
+    opacity: 0.5;
+}
+
+
+
+.welcome-message {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.message-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.message-overlay h1 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.message-overlay p {
+    font-size: 1.8rem;
+}
+
+/* Additional styling for better readability and contrast */
+
+
+.about-container {
+    display: flex;
+    z-index: 2;
+    background-color: #E3EFE3;
+    padding: 10%;
+
+}
+
+.about-section {
+   
+    flex: 0.6;
+    background-color: #AAB3AA;
+    padding: 20px;
+    color: black;
+    margin-right: -50px; /* Spacing between sections */
+    border: 1px solid black;
+}
+.textsec{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 80%;
+    width: 91%;
+}
+.textsec h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+.textsec p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1.3rem;
+    text-align: justify;
+    
+}
+
+.image-section {
+    flex: 0.4;
+    overflow: hidden;
+    padding:5% 0%;
+}   
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border:1px solid black;
+}
+
+
+
+.services-container {
+    background-color: #E3EFE3;
+    padding: 20px;
+}
+
+.services-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 4rem;
+}
+.servicetype{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+.service1 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid black;
+    height: 20rem;    
+    background-color: rgb(251 237 213);
+    text-align: center;
+    padding: 1rem;
+    /* width: 500px; */
+}
+.service2 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid black;
+    height: 20rem;    
+    background-color: rgb(251 237 213);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    /* width: 500px; */
+}
+
+.service-details {
+    flex: 0.7;
+    padding: 1rem;
+}
+.service-details h3{
+ font-size: 2rem;
+}
+.service-details p{
+    font-size: 1.5rem;
+}
+.service1:hover {
+    transform: scale(1.05) Enlarge the service container on hover
+
+}
+
+
+.service-image {
+    flex: 0.3;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 500px;
+    height: 500px;
+    /* object-fit: cover; */
+}
+.footer-container {
+    background-color: #f0f0f08c;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-info, .social-media {
+    flex: 1;
+}
+
+.contact-info h3, .social-media h3 {
+    margin-bottom: 10px;
+}
+
+.contact-info ul, .social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li, .social-media ul li {
+    margin-bottom: 5px;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.social-media ul li a:hover {
+    color: #000;
+}
+
+/* ....................transaction */
+/* Navbar transition */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.nav-items a {
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+/* Header Image transition */
+.header-image {
+    transition: opacity 1s ease;
+}
+
+/* Service Container transition */
+.service1,
+.service2 {
+    transition: transform 0.3s ease;
+}
+
+.service1:hover,
+.service2:hover {
+    transform: scale(1.05); /* Enlarge the service container on hover */
+}
+
+/* Footer transition */
+.footer-container {
+    transition: background-color 0.3s ease;
+}
+
+.social-media ul li a {
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #000; /* Change color on hover */
+}
+/* Define CSS animation for incoming transition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to elements */
+.about-container, .services-container, .footer-container {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* Ensure elements are initially hidden */
+}
+
+
+
+.custom-shape-divider-top-1708241086 {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1708241086 svg {
+    /* position: relative; */
+    display: block;
+    width: calc(174% + 1.3px);
+    height: 337px;
+}
+
+.custom-shape-divider-top-1708241086 .shape-fill {
+    fill: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+.preview-images-zone {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  .preview-image {
+    width: 150px;
+    margin-right: 10px;
+  }
+  .custom-container {
+    height: 50vh;
+    background-image: url('your-background-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: #fff;
+  }
+  .slogan-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+
+
+
+  /* <div class="row">
+      <div class="col">
+        <div class="custom-container">
+          <div class="slogan-container">
+            <h2>Empower Your Crops</h2>
+            <p>Our service helps you protect your plants and optimize your harvest.</p>
+          </div>
+        </div>
+      </div>
+    </div> */
+
+
+
+
+/* --------profile page------------------ */
+.modal-dialog {
+    max-width: 80%; /* Adjust as needed */
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 70%; /* Adjust for larger screens */
+    }
+  }

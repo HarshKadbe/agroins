@@ -1,0 +1,91 @@
+{% include "main.html" %}
+{% load static %}
+{% block content %}
+
+
+<section>
+       
+    <div class="header-container">
+        <div class="welcome-message" id="welcomeMessage1">
+            <img class="header-image" src="{%  static "images/mimage/image1.jpg"%}" alt="Header Image">
+            <div class="message-overlay">
+                <h1>Welcome to ECO-ML</h1>
+                <p>Where Agriculture Meets Innovation</p>
+            </div>
+        </div>
+       
+    </div>
+    
+</section>
+<!-- container-1----------- -->
+<div class="container-fluid">
+    <div class="about-container">
+        <div class="about-section">
+            <div class="textsec">
+                <h2>About Us</h2>
+                <p><b>Welcome to ECO-ML,</b> utilizing Machine Learning to enhance farming practices. We recommend crops based on soil nutrients and predict diseases from plant photos. Our goal is precision agriculture for optimized yield and resource utilization.</p>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="{% static "images/mimage/imageAI.jpg"%}" alt="Image">
+        </div>
+    </div>
+</div>
+<!-- container2 -->
+<section>
+    <div class="services-container">
+        <h2>SERVICES</h2>
+        <div class="servicetype">
+            <div class="service1">
+                <div class="service-image">
+                    <img src="mimage/crop.jpg" alt="Crop Recommendation">
+                </div>
+                <div class="service-details">
+                    <h3>Crop Recommendation</h3>
+                    <p>"Optimize Crop Selection: Say goodbye to guesswork! Our platform utilizes advanced algorithms to analyze soil nutrients and environmental factors, providing tailored crop recommendations."</p>
+                </div>
+            </div>
+            <div class="service2">
+                <div class="service-details">
+                    <h3>Disease Prediction</h3>
+                    <p>"Stay One Step Ahead: Our advanced disease prediction system uses machine learning to identify potential threats to your crops before they occur, helping you take proactive measures to safeguard your harvest."</p>
+                </div>
+                <div class="service-image">
+                    <img src="mimage/disease.jpg" alt="Disease Prediction">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- futter-----   -->
+
+<section>
+    <footer class="footer-container">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: example@example.com</li>
+                <li>Phone: +1234567890</li>
+                <li>Office Address: 123 Main Street, City, Country</li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</section>
+
+
+
+<!-- Java-script -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--<form method="POST" action="{% url 'disease-prediction' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="image">Upload Image:</label>
+  
+  <button type="submit">Submit</button>
+</form>-->
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Disease Prediction</h1>
+
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Welcome to Our Disease Prediction Service!</h4>
+        <p class="mb-0">Our advanced disease prediction system utilizes state-of-the-art machine learning algorithms to analyze images of plants and accurately identify potential diseases. By uploading images of your plant, you can quickly receive insights into its health status and take proactive measures to ensure optimal growth and yield.</p>
+    </div>
+    <form method="POST" action="{% url 'disease-prediction' %}" class="mt-4" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="image">Upload Images of the Plant:</label>
+            <input type="file" name="image" id="image">
+            <div class="preview-images-zone"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict Disease</button>
+    </form>
+    <div id="diseasePredictionResult" class="mt-4">
+        <!-- Disease prediction results will be displayed here -->
+    </div>
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript for disease prediction functionality -->
+
+<script>
+    $(document).ready(function() {
+        // Display preview of selected images
+        $('#image').on('change', function() {
+            var files = $(this)[0].files;
+            var previewZone = $('.preview-images-zone');
+            previewZone.empty();
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    previewZone.append('<img src="' + e.target.result + '" class="preview-image">');
+                }
+                reader.readAsDataURL(files[i]);
+            }
+        });
+    });
+</script>
+
+{% endblock content %}

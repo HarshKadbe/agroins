@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Prediction</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lite fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:5501/mindex.html">
+                <img src="mimage/logo.png" alt="Your Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crop Recommendation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Disease Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+               
+                <button class="btn btn-primary nav-buttons" onclick="register()">Register</button>
+            </div>
+        </div>
+    </nav>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Disease Prediction</h1>
+    
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Welcome to Our Disease Prediction Service!</h4>
+      <p class="mb-0">Our advanced disease prediction system utilizes state-of-the-art machine learning algorithms to analyze images of plants and accurately identify potential diseases. By uploading images of your plant, you can quickly receive insights into its health status and take proactive measures to ensure optimal growth and yield.</p>
+    </div>
+    <form id="diseasePredictionForm" class="mt-4" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="image">Upload Images of the Plant:</label>
+        <input type="file" class="form-control-file mb-2" id="image" accept="image/*" multiple>
+        <div class="preview-images-zone"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Predict Disease</button>
+    </form>
+    <div id="diseasePredictionResult" class="mt-4">
+      <!-- Disease prediction results will be displayed here -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript for disease prediction functionality -->
+
+  <script>
+    $(document).ready(function() {
+      // Display preview of selected images
+      $('#image').on('change', function() {
+        var files = $(this)[0].files;
+        var previewZone = $('.preview-images-zone');
+        previewZone.empty();
+        for (var i = 0; i < files.length; i++) {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            previewZone.append('<img src="' + e.target.result + '" class="preview-image">');
+          }
+          reader.readAsDataURL(files[i]);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

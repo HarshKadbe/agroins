@@ -1,0 +1,60 @@
+{% include "main.html" %}
+{% load static %}
+{% block content %}
+         
+    
+   <!-- header div -->
+   <div class="container-fluid" >
+            <div class="row justify-content-center align-items-center border" style="min-height: 90vh;">
+                <div class="col-lg-5 col p-5" style="background-color: #AAB3AA; border: 2px solid black; border-radius: 2%;">
+                    <h1 class="text-center">LOGIN HERE</h1>
+                    <form action="" method="POST" class="wrapper d-flex flex-column justify-content-start mt-5 mx-5 ">
+                        {% csrf_token %}
+                        <!-- Input:Email -->
+                        <div class="mb-3 input-box">
+                            <label for="username" class="form-label">Username</label>
+                        <input
+                            class=" form-control "
+                            id="formInput#text"
+                            type="text"
+                            name="username"
+                            placeholder="Enter your username..."
+                            style="background-color: rgb(177, 177, 177); border-color: black;"
+                        />
+                        </div>
+                
+                        <!-- Input:Password -->
+                        <div class="mb-3 input-box">
+                        <label for="formInput#password" class="form-label">password</label>
+                        <input
+                            class="form-control "
+                            id="formInput#passowrd"
+                            type="password"
+                            name="password"
+                            placeholder="••••••••"
+                            style="background-color: rgb(177, 177, 177); border-color: black;" 
+                        />
+                        </div>
+                        <div class="mx-5 mt-3">
+                            <input class="btn btn-primary " type="submit" value="Sign in" />
+                        </div>
+
+                    </form>
+                    
+                    <div class="text-center mt-3 mx-5">
+                        <p>Don't have an account? <a href="#">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+        
+
+{% endblock content %}

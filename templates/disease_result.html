@@ -1,0 +1,14 @@
+<h1>Leaves Disease result</h1>
+{% if prediction %}
+    {% if prediction == 'Rust' %}
+        <p> IT IS RUSTY</p>
+    {% elif prediction == 'Powdery' %}
+        <p> IT IS POWDERY</p>
+    {% else %}
+        <p> IT IS HEALTHY </p>
+    
+    {% endif %}
+
+{% else %} 
+    <p> Best Fit for this enviromnment does not found </p>
+{% endif %}
