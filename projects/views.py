@@ -21,7 +21,7 @@ def CropRecommendation(request):
     return render(request, 'crop_recommendation.html')
 
 
-@login_required
+@login_required(login_url='login')
 def cropRecommendationResult(request):
     N = float(request.POST['N'])
     P = float(request.POST['P'])
@@ -125,7 +125,9 @@ def LogoutUser(request):
     logout(request)
     return redirect('login')
 
-@login_required
+
+
+@login_required(login_url='/login')
 def Disease_prediction(request):
     class_name = ['Healthy', 'Powdery', 'Rust']
 
@@ -147,7 +149,6 @@ def Disease_prediction(request):
             predict_disease.save()
             
             return render(request, 'disease_result.html', {'prediction': model_prediction})
-        # Handle invalid form data here
     else:
         form = ImageUploadForm()
 
@@ -164,7 +165,7 @@ def Account(request):
 
 
 
-def UserHistory(request, pk):
+def User_history_description(request, pk):
     profile = request.user.profile
     search_history = profile.predicteddata_set.get(id=pk)
     context = {'profile': profile,'search_history': search_history}

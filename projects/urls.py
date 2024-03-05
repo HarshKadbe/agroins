@@ -11,6 +11,6 @@ urlpatterns = [
     path('logout/', views.LogoutUser, name="logout"),
     path('disease_prediction', views.Disease_prediction, name="disease-prediction"),
     path('account/', views.Account, name="account"),
-    path('history/<str:pk>/', views.UserHistory, name="history"),
+    path('history/<str:pk>/', views.User_history_description, name="history"),
     
 ]

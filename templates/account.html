@@ -24,7 +24,9 @@
                             <div class="mt-3">
                                 <h4>{{profile.name}}</h4>
                                 <p class="text-secondary mb-1">{{profile.username}}</p>
-                                <p class="text-muted font-size-sm">ReactJS, Java-bootstring</p>
+                                {% if profile.location %}
+                                <p class="text-muted font-size-sm">{{profile.location}}</p>
+                                {% endif %}
                             </div>
                         </div>
                         <hr class="my-4">
@@ -69,7 +71,7 @@
 
                                         
                                         <div >
-                                            <p style="cursor: pointer;">{{field.recommended_crop}}</p>
+                                            <a href="{% url "history" field.id %}" ><p style="cursor: pointer;">{{field.recommended_crop}}</p></a>
                                         </div>
                                         <div class="history-timestamp">
                                             <p>{{field.prediction_date}}</p>
@@ -79,7 +81,7 @@
                                     
                                     {% endfor %}
                                 </div>
-                                <button id="showFullHistory" class="btn btn-primary mt-3">Show Full History</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -103,7 +105,7 @@
                                     </div>
                                     {% endfor %}
                                 </div>
-                                <button id="showFullHistory" class="btn btn-primary mt-3">Show Full History</button>
+                               
                             </div>
                         </div>
                     </div>

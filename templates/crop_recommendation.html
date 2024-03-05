@@ -5,17 +5,146 @@
 
 {% block content %}
 
+    <!-- about div -->
+    <section id="about" class="about " style="margin-top: 8rem;" >
 
-<section>
-    <div class="container-fluid " >
-       <div class="row h-25 overflow-hidden">
-        <video autoplay loop muted preload="metadata" class="object-fit-cover px-0" height="400px">
-            <source src="{% static "images/mimage/pexels_videos_2169737 (1080p).mp4" %}" type="video/mp4">
-        </video>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-xl-center gy-5">
+  
+            <div class="col-xl-5 content">
+              <h2>Welcome to !</h2>
+              <h1> Our Crop Recommendation Service!</h1>
+              <p>Our advanced crop recommendation system utilizes comprehensive data analysis and machine learning algorithms to provide you with tailored recommendations for your agricultural needs.</p>
+            </div>
+  
+            <div class="col-xl-7">
+              <div class="row gy-4 icon-boxes">
+  
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                  <div class="icon-box mt-3">
+                    <i class="bi bi-buildings"></i>
+                    <h3>Decision-Making:</h3>
+                    <p>"Informed Choices, Bountiful Harvests: Empowering Farmers with Precision Insights."</p>
+                  </div>
+                </div> <!-- End Icon Box -->
+  
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                  <div class="icon-box">
+                    <i class="bi bi-clipboard-pulse"></i>
+                    <h3>Enhancing Crop Yield:</h3>
+                    <p>"Harvesting Success: Maximizing Yields Through Precision Agriculture."</p>
+                  </div>
+                </div> <!-- End Icon Box -->
+  
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                  <div class="icon-box mt-3">
+                    <i class="bi bi-command"></i>
+                    <h3>Precision Agriculture:</h3>
+                    <p>"Precision in Planting: Unleashing Tomorrow's Harvests with Soil-Informed Recommendations."</p>
+                  </div>
+                </div> <!-- End Icon Box -->
+  
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                  <div class="icon-box">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    
+                    <h3>Risk Mitigation:</h3>
+                    <p>"From Ground to Growth: Ensuring Confidence, Yielding Security with Informed Crop Choices."</p>
+                  </div>
+                </div> <!-- End Icon Box -->
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+      </section>
 
-       </div>
+<!-- ----------------------------- -->
+<!-- #about -->
+<!-- ------------------------------ -->
+<section class="page-section" id="about">
+<div class="container">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">About</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
     </div>
+    <ul class="timeline">
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/nitrogen.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Nitrogen (N)</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Nitrogen is a key component of chlorophyll, the green pigment responsible for photosynthesis. It is vital for plant growth and helps in the formation of proteins, enzymes, and other essential molecules.!</p></div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/phosporas.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Phosphorus (P)</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Phosphorus is necessary for energy transfer within the plant and is involved in processes such as photosynthesis, respiration, and cell division. It also plays a significant role in root development, flowering, and fruiting.</p></div>
+            </div>
+        </li>
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/k.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Potassium (K)</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Potassium regulates water uptake and helps in the synthesis of carbohydrates and proteins. It enhances the plant's resistance to diseases and stress, improves fruit quality, and promotes overall plant vigor.</p></div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/ph.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>pH Value</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">pH value determines the acidity or alkalinity of the soil. It influences nutrient availability to plants, as certain nutrients are more accessible within specific pH ranges. Most plants thrive in slightly acidic to neutral soils, but some crops have specific pH requirements for optimal growth.</p></div>
+            </div>
+        </li>
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/humadity.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Humidity:</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Humidity refers to the amount of moisture present in the air. It affects transpiration rates, water uptake by plants, and the development of fungal diseases. Proper humidity levels help maintain plant health and vigor.</p></div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/temp.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Temperature:</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Temperature influences the rate of plant growth, development, and metabolism. Different crops have specific temperature requirements for optimal growth and flowering. Extreme temperatures can cause damage to plants and affect their productivity.</p></div>
+            </div>
+        </li>
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static "images/mimage/RAINN.png"%}" alt="..." /></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>Rainfall</h4>
+                    
+                </div>
+                <div class="timeline-body"><p class="text-muted">Adequate rainfall is essential for supplying plants with water, which is crucial for various physiological processes such as nutrient uptake, photosynthesis, and transpiration. Insufficient or excessive rainfall can lead to water stress, affecting crop growth and yield.</p></div>
+            </div>
+        </li>
+    </ul>
+</div>
 </section>
+    
     
 <div class="container mt-5 border"style="background-color:#AAB3AA">
     <h2 class="mb-4"></h2>

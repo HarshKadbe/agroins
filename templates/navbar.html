@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-lite fixed-top">
+{% comment %} <nav class="navbar navbar-expand-lg navbar-lite fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url "index" %}">
             <img src="{% static  "images/mimage/logo.png" %}" alt="Your Logo" height="50">
@@ -17,7 +17,7 @@
                     <a class="nav-link" href="{% url "croprecommendation" %}">Crop Recommendation</a>
                 </li>
                 <li class="nav-item"> 
-                    <a class="nav-link active" aria-current="page" href="disease-prediction">Disease Prediction</a>
+                    <a class="nav-link active" href="{% url "disease-prediction" %}">Disease Prediction</a>
                 </li>
                 
             </ul>
@@ -27,6 +27,44 @@
                 <a class="btn btn-primary nav-buttons" href="{% url "login" %}">Login/Register</a>
             {% endif %}
 
+        </div>
+    </div>
+</nav>
+
+ {% endcomment %}
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-lite fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url "index" %}">
+            <img src="{% static  "images/mimage/logo.png" %}" alt="Your Logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url "index" %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "croprecommendation" %}">Crop Recommendation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url "disease-prediction" %}">Disease Prediction</a>
+                </li>
+
+            </ul>
+           
+            {% if request.user.is_authenticated %}
+                <a class="btn btn-primary nav-buttons" href="{% url "account" %}">Account</a>
+                <a class="btn btn-primary nav-buttons" href="{% url "logout" %}">Logout</a>
+             
+            {% else %}
+                <a class="btn btn-primary nav-buttons" href="{% url "login" %}">Login/Register</a>
+            {% endif %}
         </div>
     </div>
 </nav>
