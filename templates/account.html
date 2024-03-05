@@ -2,15 +2,13 @@
 
 {% load static %}
 
-
+{% comment %} 
 {{profile.username}}
 {{profile.name}}
 
-{{profile_acc.recommended_crop}}
+{{profile_acc.recommended_crop}} {% endcomment %}
 
 {% block content %}
-
-
 
    <!-- header div -->
    <div class="container-fluid p-3">
@@ -22,10 +20,10 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                             <div class="mt-3">
-                                <h4>{{profile.name}}</h4>
-                                <p class="text-secondary mb-1">{{profile.username}}</p>
+                                <h4>{{request.user.username}}</h4>
+                                <p class="text-secondary mb-1">{{request.user.first_name}}</p>
                                 {% if profile.location %}
-                                <p class="text-muted font-size-sm">{{profile.location}}</p>
+                                <p class="text-muted font-size-sm">{{request.user.location}}</p>
                                 {% endif %}
                             </div>
                         </div>

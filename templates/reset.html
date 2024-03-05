@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+{% comment %} <main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <h3>Enter new password</h3>
+            <br>
+            <p>Please enter your new password twice so we can verify you typed it in correctly.</p>
+            <br>
+            <form class="form-group" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main> {% endcomment %}
+
+<div class="container mt-5 border"style="background-color:#AAB3AA">
+    <h2 class="mb-4"></h2>
+    <div class="row border">
+        <div class="col-lg-6 py-3">
+            <form method="POST" >
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+
+{% endblock content %}
+
+
+
+

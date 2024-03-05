@@ -111,8 +111,6 @@ def RegisterUser(request):
             user.username = user.username.lower()
             user.save()
             
-            #profile = Profile.objects.create(user=user)
-            
             login(request, user)
             return redirect('index')
         
