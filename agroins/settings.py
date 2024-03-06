@@ -156,7 +156,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'devsearch.meet.developer@gmail.com'
-EMAIL_HOST_PASSWORD = 'obxfnsttkditpgfd'
+EMAIL_HOST_PASSWORD = 'naqp oqrd ymln ebfi'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -155,10 +155,11 @@ def Disease_prediction(request):
 
 
 def Account(request):
+    page = 'history'
     profile = request.user.profile
     crop_recc = profile.predicteddata_set.all()
     disease_recc = profile.predictdisease_set.all()
-    context = {'profile': profile, 'crop_recc': crop_recc, 'disease_recc': disease_recc}
+    context = {'profile': profile, 'crop_recc': crop_recc, 'disease_recc': disease_recc, 'page':page}
     return render(request, 'account.html', context)
 
 
@@ -167,4 +168,4 @@ def User_history_description(request, pk):
     profile = request.user.profile
     search_history = profile.predicteddata_set.get(id=pk)
     context = {'profile': profile,'search_history': search_history}
-    return render(request, 'search_history.html', context)
+    return render(request, 'account.html', context)
