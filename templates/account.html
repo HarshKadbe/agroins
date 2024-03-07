@@ -10,10 +10,6 @@
 
 {% block content %}
 
-  
-
-
-
 <div class="container-fluid" style="background-color:#AAB3AA ; margin-top: 4rem;" >
 
     <!-- header div -->
@@ -26,20 +22,20 @@
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                                 <div class="mt-3">
-                                    <h4>{{profile.name}}</h4>
-                                    <p class="text-secondary mb-1">{{profile.username}}</p>
-                                    <p class="text-muted font-size-sm">ReactJS, Java-bootstring</p>
+                                    <h4>{{request.user.username}}</h4>
+                                    <p class="text-secondary mb-1"> </p>
+                                    <p class="text-muted font-size-sm"></p>
                                 </div>
                             </div>
                             <hr class="my-4">
                             <ul class="list-group list-group-flush" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap "style=" background-color:#E3EFE3">
                                     <h6 class="mb-0">Full Name</h6>
-                                    <span class="text-secondary">https://bootdey.com</span>
+                                    <span class="text-secondary">{{request.user.first_name}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"style=" background-color:#E3EFE3">
                                     <h6 class="mb-0">Email Address</h6>
-                                    <span class="text-secondary">bootdey</span>
+                                    <span class="text-secondary">{{request.user.email}}</span>
                                 </li>
                                 <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"style=" background-color:#E3EFE3">
                                     <h6 class="mb-0">Twitter</h6>
@@ -70,7 +66,7 @@
                                         {% for field in crop_recc %}
                                         <div class="history-entry d-flex justify-content-between align-items-center">
                                             <div >
-                                                <p style="cursor: pointer;">{{field.recommended_crop}}</p>
+                                                <p style="cursor: pointer;">{{ field.recommended_crop|slice:"1:-1"|capfirst|safe }}</p>
                                             </div>
                                             <div class="history-timestamp">
                                                 <p>{{field.prediction_date}}</p>
@@ -78,7 +74,7 @@
                                         </div>
                                         {% endfor %}
                                     </div>
-                                    <button id="showFullHistory" >Show Full History</button>
+                                    {% comment %} <button id="showFullHistory" >Show Full History</button> {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -94,7 +90,7 @@
                                         {% for field in disease_recc %}
                                     <div class="history-entry d-flex justify-content-between align-items-center">
                                         <div>
-                                            <p>{{field}}</p>
+                                            <p>{{ field}}</p>
                                         </div>
                                         <div class="history-timestamp">
                                             <p>{{field.prediction_date_leaf}}</p>
@@ -103,7 +99,7 @@
                                     {% endfor %}
                                         
                                     </div>
-                                    <button id="showFullHistory" class="btn btn-primary mt-3">Show Full History</button>
+                                    {% comment %} <button id="showFullHistory" class="btn btn-primary mt-3">Show Full History</button> {% endcomment %}
                                 </div>
                             </div>
                         </div>

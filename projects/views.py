@@ -127,6 +127,9 @@ def LogoutUser(request):
 
 @login_required(login_url='/login')
 def Disease_prediction(request):
+    profile = request.user.profile
+    disease_recc = profile.predictdisease_set.all()
+
     class_name = ['Healthy', 'Powdery', 'Rust']
 
     if request.method == 'POST':
@@ -146,7 +149,9 @@ def Disease_prediction(request):
             predict_disease = PredictDisease(profile=request.user.profile, LeafImage=image_file, predicted_disease=model_prediction)
             predict_disease.save()
             
-            return render(request, 'disease_result.html', {'prediction': model_prediction})
+            image_url = predict_disease.LeafImage.url
+            
+            return render(request, 'disease_result.html', {'prediction': model_prediction, 'profile': profile, 'disease_recc':disease_recc, 'image_url':image_url})
     else:
         form = ImageUploadForm()
 

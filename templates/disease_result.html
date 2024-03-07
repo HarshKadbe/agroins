@@ -1,14 +1,52 @@
-<h1>Leaves Disease result</h1>
-{% if prediction %}
-    {% if prediction == 'Rust' %}
-        <p> IT IS RUSTY</p>
-    {% elif prediction == 'Powdery' %}
-        <p> IT IS POWDERY</p>
-    {% else %}
-        <p> IT IS HEALTHY </p>
-    
-    {% endif %}
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
 
-{% else %} 
-    <p> Best Fit for this enviromnment does not found </p>
-{% endif %}
+
+<div class="container-fluid" style="background-color: #E3EFE3;">
+    <div class="container-fluid">
+        <div class="row p-5 " style="height: 100vh;">
+            <div class="col-6 d-flex align-items-end" >
+                <div class="container" style="height: 80%;">
+                    <h1 class="display-4" style="color: green;">Result Successfully Fetched</h1>
+                    <div class="card mt-5 p-3">
+                        {% if prediction %}
+                        <div class="card-body">
+                            {% if prediction == 'Rust' %}
+                                <h3 class="card-title">The leaf is {{prediction}} </h3>
+                                <p class="card-text">{{prediction}} is a fungal disease that can severely affect the health of your plant.</p>
+                                <hr/>
+                                <p><b>Pracautions :</b> To control rust, remove and destroy infected leaves, and ensure good air circulation around plants.</p>
+                                <p><b>Recommend :</b> Consider using a fungicide recommended for rust control, and improve plant nutrition and overall health.</p>
+                                {% elif prediction == 'Powdery' %}
+                                <h3 class="card-title">The leaf is {{prediction}} </h3>
+                                <p class="card-text">{{prediction}} mildew is a fungal disease that can weaken your plant and reduce yield.</p>
+                                <hr/>
+                                <p><b>Pracautions :</b> To control powdery mildew, avoid overhead watering and ensure good air circulation.</p>
+                                <p><b>Recommend :</b> Apply fungicides and ensure plants are not overcrowded to reduce humidity levels.</p>
+                                {% elif prediction == 'Healthy' %}
+                                <h3 class="card-title">This leaf is {{prediction}} </h3>
+                                <p class="card-text"> Your Plant is Healthy!! </p>
+                                <hr/>
+                                <p><b>Pracautions :</b> Continue to monitor your plant for any signs of disease.</p>
+                                <p><b>Recommend :</b> Continue with regular plant care practices to maintain plant health.</p>
+
+                                {% else %}
+                                <h3 class="card-title"> The Disease does not found !!!! </h3>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center ">
+                <img src="{{image_url}}" class="image-fluid" style="transform: scalex(-1);height: 30rem;   border-radius: 30% 70% 70% 30% / 52% 30% 70% 48%;" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+{% endblock content %}

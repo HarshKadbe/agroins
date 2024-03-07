@@ -35,3 +35,11 @@ class PredictDisease(models.Model):
     predicted_disease = models.CharField(max_length=30)
     prediction_date_leaf = models.DateTimeField(auto_now_add=True)
     
+    # @property
+    # def imageURL(self):
+    #     try:
+    #         url = self.LeafImage.url
+    #     except:
+    #         url = ''
+    #     return url
+    
