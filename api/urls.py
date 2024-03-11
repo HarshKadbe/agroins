@@ -10,6 +10,7 @@ urlpatterns = [
     path('update_predict_crop/<str:crop_id>/', views.update_predicted_crop, name="update-predict-crop"),
     path('delete_predict_crop/<str:crop_id>/', views.delete_predicted_crop, name="delete-predicted-crop"),
     
+    path('predict_disease/', views.predict_leaf_disease, name='predict_disease'),
     
     
 ]

@@ -7,3 +7,7 @@ class PredictDataSerializer(serializers.ModelSerializer):
         model = PredictedData
         fields = ['nitrogen', 'phosphorus', 'pottasium', 'temperature', 'humidity', 'ph', 'rainfall']
         
+class PredictDiseaseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PredictDisease
+        fields = ['LeafImage']

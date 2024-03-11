@@ -1,59 +1,65 @@
 {% load static %}
-<html>
-    <head>
-  
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" type="text/css" href="{% static "css/style1.css" %}">  
-    </head>
+{% if not exclude_index %}
 
-    <body>
-          <footer>
-             <div class="container">
-               <div class="sec aboutus">
-                 <h2>About Us</h2>
-                 <p>
-                  Welcome to Precision Agriculture, a pioneering force in precision agriculture. With a commitment to excellence and innovation, we harness cutting-edge technologies to revolutionize the future of farming. Our mission is to empower farmers with intelligent solutions that optimize crop yields, reduce environmental impact, and enhance overall efficiency</p>
-                 <ul class="sci">
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                 </ul>
-               </div>
-               <div class="sec quicklinks">
-                  <h2>Support</h2>
-                  <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-               </div>
-               <div class="sec quicklinks">
-                  <h2>Solutions</h2>
-                  <ul>
-                    <li><a href="#">Disease prediction</a></li>
-                    <li><a href="#">crop recommendation</a></li>
-                    
-                  </ul>
-               </div>
-               <div class="sec contact">
-                  <h2>Contact Us</h2>
-                  <ul class="info">
-                    <li>
-                        <span><i class="fa-solid fa-phone"></i></span>
-                        <p><a href="tel:+12345678900">+1 234 567 8900</a></p>
-                    </li>
-                    <li>
-                        <span><i class="fa-solid fa-envelope"></i></span>
-                        <p><a href="mailto:Knowmore@email.com">Knowmore@email.com</a></p>
-                    </li>
-                  </ul>
-             </div>
-             </div>
-          </footer>
-          <div class="copyrightText">
-            <p>Copyright 2023 Online Tutorials .All Right Reserved</p>
-          </div>
-    </body>
-</html>
+  <footer class=" text-black p-3" style="background-color: #455d3e70;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="aboutus">
+                    <h2>About Us</h2>
+                    <p>Welcome to Precision Agriculture, a pioneering force in precision agriculture. With a commitment to excellence and innovation, we harness cutting-edge technologies to revolutionize the future of farming. Our mission is to empower farmers with intelligent solutions that optimize crop yields, reduce environmental impact, and enhance overall efficiency.</p>
+                    <ul class="list-inline sci">
+                        <li class="list-inline-item "><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="quicklinks">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="#" class="link-underline-none">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <a href="#" class="link-underline-none">No Underline</a>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="quicklinks">
+                    <h2>Solutions</h2>
+                    <ul>
+                        <li><a href="#">Disease prediction</a></li>
+                        <li><a href="#">Crop recommendation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="contact">
+                    <h2>Contact Us</h2>
+                    <ul class="list-unstyled info">
+                        <li>
+                            <span><i class="fas fa-phone"></i></span>
+                            <p><a href="tel:+12345678900">+1 234 567 8900</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p><a href="mailto:Knowmore@email.com">Knowmore@email.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <div class="copyrightText bg-dark text-light py-3">
+    <div class="container">
+        <p class="m-0 text-center "><i>Copyright 2024 Pricision Agriculture. All Rights Reserved</i></p>
+    </div>
+  </div>
+
+{% endif %}

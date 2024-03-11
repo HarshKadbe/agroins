@@ -1,10 +1,11 @@
 from django.http import Http404
+import joblib
 from rest_framework import status
 from joblib import load
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from projects.models import PredictedData
-from .serializers import PredictDataSerializer
+from .serializers import PredictDataSerializer, PredictDiseaseSerializer
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -86,3 +87,16 @@ def delete_predicted_crop(request, crop_id):
     
     return Response(status=status.HTTP_204_NO_CONTENT)    
 
+import base64
+
+@api_view(['POST'])
+def predict_leaf_disease(request):
+    model = joblib.load('./SavedModel/leaves_disease_prediction_new_model.joblib')
+    if request.method == 'POST':
+        serializer = PredictDiseaseSerializer(data=request.data)
+        if serializer.is_valid():
+            image_base64 = serializer.validated_data.get('image', '')
+            image_data = base64.b64decode(image_base64)
+            prediction = predict_leaf_disease(image_data)
+            return Response({'prediction': prediction}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -23,5 +23,11 @@
     {% endblock content %}
 
 
+    {% if request.path != '/' %}
+      {% include 'foot.html' %}
+    {% endif %}
+
+
+
 </body>    
 </html>
