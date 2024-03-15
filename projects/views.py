@@ -1,3 +1,4 @@
+from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect
 import joblib
 from joblib import load
@@ -23,13 +24,16 @@ def CropRecommendation(request):
 
 @login_required(login_url='login')
 def cropRecommendationResult(request):
-    N = float(request.POST['N'])
-    P = float(request.POST['P'])
-    K = float(request.POST['K'])
-    temperature = float(request.POST['temperature'])
-    humidity = float(request.POST['humidity'])
-    ph = float(request.POST['ph'])
-    rainfall = float(request.POST['rainfall'])
+    try:
+        N = float(request.POST['N'])
+        P = float(request.POST['P'])
+        K = float(request.POST['K'])
+        temperature = float(request.POST['temperature'])
+        humidity = float(request.POST['humidity'])
+        ph = float(request.POST['ph'])
+        rainfall = float(request.POST['rainfall'])
+    except ValueError:
+        return HttpResponseBadRequest("Invalid input. Please enter numeric values for all fields.")
 
     user_data = pd.DataFrame({
         'N': [N],
@@ -39,18 +43,13 @@ def cropRecommendationResult(request):
         'humidity' : [humidity],
         'ph': [ph],
         'rainfall': [rainfall]
-
-})
+    })
 
     recommended_crop = model.predict(user_data)
-    
     recommended_crop_str = ' '.join(recommended_crop).upper()
-    
-    
-    #profile = Profile.objects.create(user=request.user)
 
     profile = request.user.profile
-        
+
     prediction_instance = PredictedData(
         profile=profile,
         nitrogen=N,
@@ -61,7 +60,6 @@ def cropRecommendationResult(request):
         ph=ph,
         rainfall=rainfall,
         recommended_crop=recommended_crop,
-        
     )
     prediction_instance.save()
 

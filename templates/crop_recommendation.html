@@ -1,9 +1,23 @@
 
 
 {% extends "main.html" %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input  type="text" name="N"/>
+    <input  type="text" name="K"/>
+    <input  type="text" name="P"/>
+    <input  type="text" name="temperature"/>
+    <input  type="text" name="humidity"/>
+    <input  type="text" name="ph"/>
+    <input  type="text" name="rainfall"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+
 {% load static %}
 
-{% block content %}
+
 
     <!-- about div -->
     <section id="about" class="about " style="margin-top: 8rem;" >
@@ -151,7 +165,7 @@
     <div class="row border">
         <div class="col-lg-6 py-3" ><img src="{% static 'images/mimage/image3.jpg' %}" alt="image" class="img-thumbnail  border"></div>
         <div class="col-lg-6 py-3">
-            <form method="POST" action="crop_result" >
+            <form method="POST" action="{% url 'crop_result' %}" >
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="nitrogen" class="form-label">Nitrogen Percent:</label>
@@ -192,7 +206,7 @@
 
 
 
-
+{% include "foot.html" %}
 {% endblock content %}
 
 

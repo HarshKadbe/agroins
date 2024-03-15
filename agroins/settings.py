@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'precision_medic',  
         'USER': 'root',  
-        'PASSWORD': os.environ.get('DB_PASSWORD'),  
+        'PASSWORD': 'HarshKadbe@0105',  
         'HOST': '127.0.0.1',  
         'PORT': '3306',  
         'OPTIONS': {
