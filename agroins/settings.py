@@ -92,8 +92,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'precision_medic',  
         'USER': 'root',  
-        'PASSWORD': 'HarshKadbe@0105',  
-        'HOST': '127.0.0.1',  
+        'PASSWORD': '',  
+        'HOST': '',  
         'PORT': '3306',  
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -155,8 +155,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'devsearch.meet.developer@gmail.com'
-EMAIL_HOST_PASSWORD = 'naqp oqrd ymln ebfi'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
